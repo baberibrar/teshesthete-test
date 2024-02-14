@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "2d82a3af-e116-48e5-a61a-7ce4112cd297",
+		"name": "Library Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25155271"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "baber",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "baberibrar@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ali12ali",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "baberibrar@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ali12ali",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDUwNjkwLCJpYXQiOjE3MDc5MTQ2OTAsImp0aSI6ImZiZWJlMGJkOGE0ZDRhMmJiNTE3MzVhNjdhZTVkYjQ4IiwidXNlcl9pZCI6NX0.Ko4kuH5kAYp_7RGvl0pS_KtaRpg5mKchYDDPwiks4so",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Pride and Prejudice",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Jane Austen",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/book",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDUwOTcyLCJpYXQiOjE3MDc5MTQ5NzIsImp0aSI6IjdmZWUzODJkZTk0ODQyZDQ4NGJjNzJhYTZlMjAyMjFkIiwidXNlcl9pZCI6Nn0.jtZKbZ4DxVdXfdySCBP5rPHWxFIb5Mp_GMfVGQFB6uc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/book",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"book"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Great",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book borrowed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDUyNTA2LCJpYXQiOjE3MDc5MTY1MDYsImp0aSI6ImUyYWI2NTE1ODlmNjQxMTViZGQwMjQ4YmQ2YjUwN2NjIiwidXNlcl9pZCI6Nn0.adpZCpdSGX3Hb8q5mp0lmRGS-GbrApzczObDaYIZICM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "book_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/borrow-book/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"borrow-book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDUyNTA2LCJpYXQiOjE3MDc5MTY1MDYsImp0aSI6ImUyYWI2NTE1ODlmNjQxMTViZGQwMjQ4YmQ2YjUwN2NjIiwidXNlcl9pZCI6Nn0.adpZCpdSGX3Hb8q5mp0lmRGS-GbrApzczObDaYIZICM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "book_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/return-book/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"return-book",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
